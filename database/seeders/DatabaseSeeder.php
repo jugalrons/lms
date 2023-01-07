@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Course;
+use App\Models\Eclass;
+use App\Models\Lead;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
@@ -47,6 +50,23 @@ class DatabaseSeeder extends Seeder
         // user assign role
 
         $user->assignRole($role);
+
+        //create leads
+
+
+        Lead::factory(100)->create();
+        Eclass::factory(10)->create();
+
+        $course = Course::create([
+            'name' => 'Laravel Queues in Action',
+            'description' => 'Laravel application is a php framework is.',
+            'image' => 'https://laravel.com/img/logomark.min.svg',
+            
+        ]);
+
+          
+           
+        
         
     }
 }

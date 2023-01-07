@@ -10,7 +10,11 @@ class Course extends Model
     use HasFactory;
 
 
-    public function curriculums(){
-        return $this->hasMany(Curriculum::class);
+    public function exams(){
+        return $this->hasMany(Exam::class);
+    }
+
+    public function eclasses(){
+        return $this->hasMany(eclass::class);
     }
 }
