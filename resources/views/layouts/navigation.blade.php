@@ -15,7 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
+                    
+                                
+                    @can('lead-management')
+                    <x-nav-link :href="route('lead.index')" :active="request()->routeIs('lead.index')">
+                        {{ __('Leads') }}
+                    </x-nav-link>
+                    @endcan
+                </div>    
+                
             </div>
 
             <!-- Settings Dropdown -->
