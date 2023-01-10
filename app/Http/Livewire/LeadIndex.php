@@ -17,11 +17,13 @@ class LeadIndex extends Component
         ]);
     }
 
-    public function leadDelete($id, FlasherInterface $flasher){
+    public function leadDelete($id,){
+        permission_check('lead-management');
+
         $lead = Lead::findOrFail($id);
         $lead->delete();
 
-        $flasher->addSuccess('Lead deleted succesfully.');
+        flash()->addSuccess('Lead deleted succesfully.');
     
     }
 }
