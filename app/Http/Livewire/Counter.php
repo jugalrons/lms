@@ -16,8 +16,8 @@ class Counter extends Component
 
     public function increase (FlasherInterface $flasher, $value){
         
-        $flasher->addSuccess('You have added successfully ' . $value);
-        $this->count++;
+        // $flasher->addSuccess('You have added successfully ' . $value);
+       // $this->count++;
         
         
     }
